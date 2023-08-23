@@ -4,7 +4,7 @@ import com.example.account.dto.AccountDto;
 import com.example.account.dto.CreateAccountRequest;
 import com.example.account.dto.converter.AccountDtoConverter;
 import com.example.account.model.*;
-import com.example.account.repository.AccountRepositorty;
+import com.example.account.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -15,12 +15,12 @@ import java.time.LocalDateTime;
 @Service
 public class AccountService {
 
-    private final AccountRepositorty accountRepository;
+    private final AccountRepository accountRepository;
     private final CustomerService customerService;
     private final AccountDtoConverter converter;
     private final Clock clock;
 
-    public AccountService(AccountRepositorty accountRepository,
+    public AccountService(AccountRepository accountRepository,
                           CustomerService customerService,
                           AccountDtoConverter converter, Clock clock) {
         this.accountRepository = accountRepository;

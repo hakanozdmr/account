@@ -1,9 +1,10 @@
 package com.example.account.model
 
-import jakarta.persistence.*
 import org.hibernate.annotations.GenericGenerator
 import java.math.BigDecimal
 import java.time.LocalDateTime
+import jakarta.persistence.*
+
 @Entity
 data class Account(
 
@@ -22,12 +23,22 @@ data class Account(
     val transaction: Set<Transaction> = HashSet()
 ) {
 
+    constructor() : this(
+        "",
+        balance = BigDecimal(0),
+        creationDate = LocalDateTime.now(),
+        customer = Customer(),
+        transaction = HashSet()
+
+    )
+
     constructor(customer: Customer, balance: BigDecimal, creationDate: LocalDateTime) : this(
         "",
         customer = customer,
         balance = balance,
-        creationDate = creationDate ,
+        creationDate = creationDate
     )
+
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

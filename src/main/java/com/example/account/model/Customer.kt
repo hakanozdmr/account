@@ -14,10 +14,12 @@ data class Customer(
     val name: String?,
     val surname: String?,
 
-    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
     val accounts: Set<Account>
 ) {
 
+    constructor(id:String , name: String, surname: String) : this(id,name, surname, HashSet())
+    constructor() : this("","", "", HashSet())
     constructor(name: String, surname: String) : this("", name, surname, HashSet())
 
     override fun equals(other: Any?): Boolean {

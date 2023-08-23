@@ -36,23 +36,5 @@ public class CustomerDtoConverter {
                         .collect(Collectors.toSet()));
 
     }
-    /*public Customer convertToCustomer(CustomerDto from) {
-            return new Customer(
-                    from.getId(),
-                    from.getName(),
-                    from.getSurname(),
-                    from.getAccounts()
-                            .stream()
-                            .map(customerAccountDtoConverter::convertAccount)
-                            .collect(Collectors.toSet()));
-
-    }*/
-    public Customer convertToNewCustomer(CreateCustomerRequest from) {
-        return new Customer(
-                from.getId(),
-                from.getName(),
-                from.getSurname(),
-                new HashSet<>()); // Initialize an empty set for accounts
-    }
 
 }

@@ -35,7 +35,7 @@ public class CustomerService {
     }
 
     public Customer createCustomer(CreateCustomerRequest request){
-         Customer customer = converter.convertToNewCustomer(request);
+         Customer customer = new Customer(request.getId(),request.getName(),request.getSurname());
         return  customerRepository.save(customer);
 
     }

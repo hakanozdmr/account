@@ -24,7 +24,6 @@ public class AccountDtoConverter {
         return new AccountDto(from.getId(),
                 from.getBalance(),
                 from.getCreationDate(),
-//                from.getCustomer().getId(),
                 customerDtoConverter.convertToAccountCustomer(Optional.ofNullable(from.getCustomer())),
                 Objects.requireNonNull(from.getTransaction())
                         .stream()

@@ -49,11 +49,6 @@
             <version>2.1.0</version>
         </dependency>
 
-        <!--Spring Security -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>

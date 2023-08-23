@@ -10,18 +10,9 @@ import java.util.Objects;
 public class TransactionDtoConverter {
 
     public TransactionDto convert(Transaction from) {
-        return new TransactionDto(
-                from.getId(),
+        return new TransactionDto(from.getId(),
                 from.getTransactionType(),
                 from.getAmount(),
                 from.getTransactionDate());
-//                from.getAccount().getId());
     }
-   /* public Transaction convertTransaction(TransactionDto from) {
-        return new Transaction(
-                from.getAmount(),
-                from.getTransactionDate(),
-                from.getAccount());
-    }*/
-
 }
