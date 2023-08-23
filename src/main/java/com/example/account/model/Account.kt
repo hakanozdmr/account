@@ -26,7 +26,7 @@ data class Account(
         "",
         customer = customer,
         balance = balance,
-        creationDate = creationDate
+        creationDate = creationDate ,
     )
 
     override fun equals(other: Any?): Boolean {

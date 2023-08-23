@@ -1,5 +1,6 @@
 package com.example.account.dto
 
+import com.example.account.model.Customer
 import java.math.BigDecimal
 import java.time.LocalDateTime
 

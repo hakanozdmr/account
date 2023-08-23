@@ -1,5 +1,6 @@
 package com.example.account.service;
 
+import com.example.account.dto.CreateCustomerRequest;
 import com.example.account.dto.CustomerDto;
 import com.example.account.dto.converter.CustomerDtoConverter;
 import com.example.account.exception.CustomerNotFoundException;
@@ -31,6 +32,12 @@ public class CustomerService {
 
     public CustomerDto getCustomerById(String customerId) {
         return converter.convertToCustomerDto(findCustomerById(customerId));
+    }
+
+    public Customer createCustomer(CreateCustomerRequest request){
+         Customer customer = converter.convertToNewCustomer(request);
+        return  customerRepository.save(customer);
+
     }
 
     public List<CustomerDto> getAllCustomer() {

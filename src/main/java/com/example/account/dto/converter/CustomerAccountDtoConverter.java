@@ -26,4 +26,13 @@ public class CustomerAccountDtoConverter {
                         .collect(Collectors.toSet()),
                 from.getCreationDate());
     }
+
+   /* public Account convertAccount(CustomerAccountDto from) {
+        return new Account(
+               from.getCustomer(),
+                from.getBalance(),
+                from.getCreationDate());
+    }*/
+
+
 }

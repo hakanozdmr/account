@@ -1,10 +1,14 @@
 package com.example.account.dto.converter;
 
 import com.example.account.dto.AccountCustomerDto;
+import com.example.account.dto.AccountDto;
+import com.example.account.dto.CreateCustomerRequest;
 import com.example.account.dto.CustomerDto;
+import com.example.account.model.Account;
 import com.example.account.model.Customer;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -32,7 +36,23 @@ public class CustomerDtoConverter {
                         .collect(Collectors.toSet()));
 
     }
+    /*public Customer convertToCustomer(CustomerDto from) {
+            return new Customer(
+                    from.getId(),
+                    from.getName(),
+                    from.getSurname(),
+                    from.getAccounts()
+                            .stream()
+                            .map(customerAccountDtoConverter::convertAccount)
+                            .collect(Collectors.toSet()));
 
-
+    }*/
+    public Customer convertToNewCustomer(CreateCustomerRequest from) {
+        return new Customer(
+                from.getId(),
+                from.getName(),
+                from.getSurname(),
+                new HashSet<>()); // Initialize an empty set for accounts
+    }
 
 }

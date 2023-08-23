@@ -4,13 +4,24 @@ import com.example.account.dto.TransactionDto;
 import com.example.account.model.Transaction;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 @Component
 public class TransactionDtoConverter {
 
     public TransactionDto convert(Transaction from) {
-        return new TransactionDto(from.getId(),
+        return new TransactionDto(
+                from.getId(),
                 from.getTransactionType(),
                 from.getAmount(),
                 from.getTransactionDate());
+//                from.getAccount().getId());
     }
+   /* public Transaction convertTransaction(TransactionDto from) {
+        return new Transaction(
+                from.getAmount(),
+                from.getTransactionDate(),
+                from.getAccount());
+    }*/
+
 }
