@@ -30,6 +30,7 @@ The application has 2 apis
 POST /v1/account - creates a new account for existing customer
 GET /v1/customer/{customerId} - retrieves a customer
 GET /v1/customer - retrieves all customers
+POST /v1/customer - creates a new customer
 ```
 
 JUnit test coverage is 100% as well as integration tests are available.
